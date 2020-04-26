@@ -15,6 +15,10 @@ function fcp () {
     cat $file | pbcopy
 }
 
+function dfg() {
+    grep -ri "$@" "$HOME/dotfiles" --exclude-dir=.git
+}
+
 function json_parse() {
     [[ -f "$1" ]] && node -e "console.log(JSON.stringify(JSON.parse(JSON.parse(require('fs').readFileSync('./$1', 'utf8'))), null, 2));"
 }
