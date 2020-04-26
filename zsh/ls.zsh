@@ -1,3 +1,5 @@
+# github.com/trapd00r/LS_COLORS
+export LSCOLORS="gxfxcxdxbxegedabagacad"
 export LS_COLORS='di=36:ex=31:ln=35:or=41:mi=41:pi=93'
 
 # LC_COLLATE=C  -->  ascii sort

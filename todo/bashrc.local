@@ -18,18 +18,10 @@ PATH="$PATH:$HOME_LIB/redis-5.0.5/src"
 PATH="$PATH:$HOME/visualvm/bin"
 export PATH
 
-alias .bls="vim $HOME/.bashrc.local.skillz"
 alias gg="$HOME_LIB/grails-2.5.3/bin/grails"
 alias jdbc="java -Djava.ext.dirs=$HOME_LIB/jline_sqlline__mysql_connector sqlline.SqlLine"
 alias jshell="$HOME_LIB/jdk-11.0.2.jdk/Contents/Home/bin/jshell"
 alias jmxterm="java -jar $HOME/bin/jmxterm-1.0.0-uber.jar"
-alias lsm2="ls ~/.m2/repository"
 alias mysqlroot="mysql -uroot -h127.0.0.1"
-alias mw="./mvnw"
 alias td="vim ~/practice/todo"
 alias .p="vim ~/.p"
-
-alias dl="cd $HOME/Downloads"
-alias dt="cd $HOME/Desktop"
-
-source $HOME/.bashrc.local.skillz
