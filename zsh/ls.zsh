@@ -22,4 +22,4 @@ unset colorflag
 unset dirflag
 unset OS
 
-#alias ls="gls --color -Flhp --group-directories-first"
+command -v gls && alias ls="gls --color -Flhp --group-directories-first"
