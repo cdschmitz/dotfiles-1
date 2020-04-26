@@ -37,12 +37,12 @@ function remove_backslashes() {
 
 # Save a backup of whatever file is passed to this function.
 # Directories are copied recursively.
-function save () {
+function save() {
     local file="$1"
     [[ -z $file ]] && echo "No argument provided." && return 1
     [[ ! -e $file ]] && echo "$file does not exist." && return 2
 
-    local base_saved_filename=$(basename "$file"){,.save}
+    local base_saved_filename="$(basename "$file").save"
     local saved_filename=$base_saved_filename
     local n=1
     while [ -e $saved_filename ]; do
