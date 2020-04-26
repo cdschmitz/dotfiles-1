@@ -22,4 +22,6 @@ unset colorflag
 unset dirflag
 unset OS
 
-command -v gls && alias ls="gls --color -Flhp --group-directories-first"
+if $(command -v gls &> /dev/null); then
+    alias ls="gls --color -Flhp --group-directories-first"
+fi
