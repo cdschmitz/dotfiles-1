@@ -1,0 +1,107 @@
+OS="$(uname -s)"
+
+alias u="cd .."
+alias u2="cd ../.."
+alias u3="cd ../../.."
+alias u4="cd ../../../.."
+alias u5="cd ../../../../.."
+alias u6="cd ../../../../../.."
+alias u7="cd ../../../../../../.."
+
+alias .a="vim $HOME/.aliases"
+alias .aco="vim $HOME/.aws/{config,credentials}"
+alias .b="vim $HOME/.bash_profile"
+alias .bl="vim $HOME/.bashrc.local"
+alias .e="vim $HOME/.exports"
+alias .f="vim $HOME/.functions"
+alias .g="vim $HOME/.gitconfig"
+alias .kco="vim $HOME/.kube/config"
+alias .sshc="vim $HOME/.ssh/config"
+alias .sshkh="vim $HOME/.ssh/known_hosts"
+alias .v="vim $HOME/.vimrc"
+alias .vim="cd $HOME/.vim"
+alias c="clear"
+alias d="docker"
+alias dc="docker-compose"
+alias dotfiles="cd ~/dotfiles"
+alias envs="env | sort"
+alias g="git"
+alias grep="grep --color"
+alias h="history"
+alias hosts="sudo $EDITOR /etc/hosts"
+alias k="kubectl"
+alias myps="ps -ef | grep $USER"
+alias o="open"
+alias s="source $HOME/.bash_profile"
+alias toxi="toxiproxy-cli"
+
+# ls
+# LC_COLLATE=C  -->  ascii sort
+if ls --color > /dev/null 2>&1; then  # GNU
+    colorflag="--color"
+else  # OSX
+    colorflag="-G"
+fi
+
+if ls --group-directories-first &> /dev/null; then
+    dirflag="--group-directories-first"
+else
+    dirflag=""
+fi
+
+alias ls="CLICOLOR_FORCE=1 ls -Flhp ${colorflag} ${dirflag}"
+alias lsa="ls -a"
+alias lsd="ls | grep '^d'"
+
+# python/virtualenv
+alias de="deactivate"
+alias freeze="pip freeze"
+alias pyserver="python -m SimpleHTTPServer"
+
+# node
+alias grunt="./node_modules/.bin/grunt"
+alias gulp="./node_modules/.bin/gulp"
+alias node-screen="screen -S node-screen -t node-window 'node'"
+
+# Copy to clipboard
+alias cc="tr -d '\n' | pbcopy"
+if [ "$OS" == 'Linux' ]; then
+    alias cc="xclip -selection clip"
+fi
+
+# Recursively delete '.DS_Store' files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# git root
+alias gr='[ ! -z $(git rev-parse --show-cdup) ] && cd $(git rev-parse --show-cdup || pwd)'
+
+# IP addresses
+alias ip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias localip="ipconfig getifaddr en1"
+if [ "$OS" == 'Linux' ]; then
+    alias local-ip="ifconfig | \
+                    | grep 'inet addr' \
+                    | grep -v '127.0.0.1' \
+                    | cut -d: -f2 \
+                    | cut -d' ' -f1"
+fi
+
+# Hide/Show hidden files in Finder
+if [ "$OS" == 'Darwin' ]; then
+    alias hide-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'
+    alias show-hidden-files='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'
+fi
+
+# Lock screen
+if [ "$OS" == 'Darwin' ]; then
+    alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+elif [ "$OS" == 'Linux' ]; then
+    alias lock='gnome-screensaver-command --lock'
+fi
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
+
+unset colorflag
+unset dirflag
+unset OS
