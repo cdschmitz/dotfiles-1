@@ -1,0 +1,53 @@
+[alias]
+    aa    = add -A
+    amend = commit --amend --reuse-message=HEAD
+    b     = branch
+    ba    = branch -a
+    c     = commit
+    co    = checkout
+    cp    = cherry-pick
+    d     = diff
+    dc    = diff --cached
+    l     = log
+    lp    = log -p
+    ls    = log --pretty=oneline
+    rpo   = remote prune origin
+    rs    = remote show
+    rso   = remote show origin
+    s     = status
+    sl    = stash list
+
+[color]
+    # Use colors in Git commands that are capable of colored output when
+    # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
+
+[color "branch"]
+    current = cyan bold
+    local = yellow
+    remote = green
+
+[color "diff"]
+    frag = magenta bold # line info
+    meta = yellow bold
+    new = green         # additions
+    old = red           # deletions
+
+[color "status"]
+    added = green
+    branch = cyan bold
+    changed = red
+    untracked = magenta
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
+
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+
+[push]
+    # Make `git push` automatically push relevant
+    # annotated tags when pushing branches out
+    followTags = true
