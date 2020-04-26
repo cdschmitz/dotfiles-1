@@ -1,6 +1,9 @@
 # Make vim the default editor
 export EDITOR='vim'
 
+# Dont tab complete .svn directories
+export FIGNORE=.svn
+
 # Ignore commands that start with spaces and duplicates
 export HISTCONTROL='ignoreboth'
 
@@ -15,27 +18,18 @@ export HISTIGNORE='&:[bf]g:cd:h:ls:s:u:history:pwd'
 export LANG='en_US'
 export LC_ALL='en_US.UTF-8'
 
-# Don't clear the screen after quitting a man page
-export MANPAGER='less -X'
-
 # Use custom `less` colors for man pages
 # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html
 export LESS_TERMCAP_md=$'\E[1;32m'   # begin bold mode
 export LESS_TERMCAP_me=$'\E[0m'      # end bold mode
 
+# Don't clear the screen after quitting a man page
+export MANPAGER='less -X'
+export MANPATH="/usr/local/man:$MANPATH"
+
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-# here's LS_COLORS
-# github.com/trapd00r/LS_COLORS
-# command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
-# eval "$(gdircolors -b ~/.dircolors)"
-#export LS_COLORS='di=36:ex=31:ln=35:or=41:mi=41:pi=93'
-export LSCOLORS="gxfxcxdxbxegedabagacad"
-
-# Dont tab complete .svn directories
-export FIGNORE=.svn
-
 export TERM="xterm-color"
-unset COLORFGBG
+#unset COLORFGBG
