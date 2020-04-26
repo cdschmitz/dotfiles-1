@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/cschmitz/skillz/api/api'
-let g:netrw_dirhist_2='/Users/cschmitz/skillz/_clones/ts/skillz/target/test-reports'
-let g:netrw_dirhist_3='/Users/cschmitz/dotfiles-1/git/initial'
-let g:netrw_dirhist_4='/Users/cschmitz/dotfiles-1/xcode'
-let g:netrw_dirhist_5='/Users/cschmitz/dotfiles/git/initial'
