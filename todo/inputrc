@@ -1,0 +1,35 @@
+# Disable beeping and window flashing
+set bell-style none
+
+# Use case-insensitive TAB autocompletion
+set completion-ignore-case on
+
+# Auto list TAB completions
+set show-all-if-ambiguous off
+
+# Use the text that has already been typed as the prefix for searching through
+# commands (i.e. more intelligent Up/Down behavior)
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+set match-hidden-files off
+
+# Show all autocomplete results at once
+set page-completions off
+
+# If there are more than 200 possible completions for a word, ask to show them all
+set completion-query-items 200
+
+# Show extra file information when completing, like `ls -F` does
+set visible-stats on
+
+# Tab completion for symlink directories
+set mark-symlinked-directories on
+
+# vi shortcuts
+set editing-mode vi
+$if mode=vi
+    set keymap vi-insert
+    "jf": vi-movement-mode
+$endif
