@@ -21,6 +21,7 @@ alias hosts='sudo $EDITOR /etc/hosts'
 alias lsm2='ls ~/.m2/repository'
 alias myps='ps -ef | grep $USER'
 alias mw='./mvnw'
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias s='source $HOME/.bash_profile'
 alias toxi='toxiproxy-cli'
 
