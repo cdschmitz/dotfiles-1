@@ -49,9 +49,12 @@ setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
-setopt NO_LIST_BEEP
 setopt PROMPT_SUBST
 setopt SHARE_HISTORY # share history between sessions ???
+
+unsetopt BEEP
+unsetopt LIST_BEEP
+setopt NO_LIST_BEEP
 
 setopt APPEND_HISTORY # adds history
 setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
