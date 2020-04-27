@@ -1,3 +1,6 @@
+# Disable pager for awscli
+export AWS_PAGER=''
+
 # Make vim the default editor
 export EDITOR='vim'
 
