@@ -24,6 +24,9 @@ export HISTIGNORE='&:[bf]g:cd:h:ls:s:u:history:pwd'
 export LANG='en_US'
 export LC_ALL='en_US.UTF-8'
 
+# Don't use pager for command if output if it fits on the screen
+export LESS="-RFX"
+
 # Use custom `less` colors for man pages
 # https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html
 export LESS_TERMCAP_md=$'\E[1;32m'   # begin bold mode
