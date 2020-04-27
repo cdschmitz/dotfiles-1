@@ -1,4 +1,6 @@
-export CLICOLOR=true
+# 256 color terminal
+export CLICOLOR=1
+export TERM=xterm-256color
 
 # Make vim the default editor
 export EDITOR='vim'
@@ -40,7 +42,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 # shells instead of the default "last window closed" history
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-export TERM="xterm-color"
 
 
 setopt COMPLETE_IN_WORD

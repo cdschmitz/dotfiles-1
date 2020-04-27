@@ -1,6 +1,10 @@
 # Disable pager for awscli
 export AWS_PAGER=''
 
+# 256 color terminal
+export CLICOLOR=1
+export TERM=xterm-256color
+
 # Make vim the default editor
 export EDITOR='vim'
 
@@ -43,6 +47,3 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 
 # Dont tab complete .svn directories
 export FIGNORE=.svn
-
-export TERM="xterm-color"
-unset COLORFGBG

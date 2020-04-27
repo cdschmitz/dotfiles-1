@@ -59,6 +59,12 @@ function port_process_kill() {
     [[ -n "$1" ]] && lsof -t -i tcp:"$1" | xargs kill
 }
 
+function print_terminal_colors() {
+    for code in {0..255}
+        do echo -e "\e[38;5;${code}m"'\\e[38;5;'"$code"m"\e[0m"
+    done
+}
+
 function remove_backslashes() {
     [[ -f "$1" ]] && sed 's/\\//g' < "$1"
 }
