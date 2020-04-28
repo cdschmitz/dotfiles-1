@@ -43,7 +43,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 
-
 setopt COMPLETE_IN_WORD
 setopt CORRECT
 setopt EXTENDED_HISTORY # add timestamps to history
@@ -72,9 +71,10 @@ setopt complete_aliases
 
 bindkey -v
 bindkey 'jf' vi-cmd-mode
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^?' backward-delete-char
+bindkey " " magic-space
+#bindkey '^[^[[D' backward-word
+#bindkey '^[^[[C' forward-word
+#bindkey '^[[5D' beginning-of-line
+#bindkey '^[[5C' end-of-line
+#bindkey '^[[3~' delete-char
+#bindkey '^?' backward-delete-char
