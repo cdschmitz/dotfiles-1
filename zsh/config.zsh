@@ -72,9 +72,13 @@ setopt complete_aliases
 bindkey -v
 bindkey 'jf' vi-cmd-mode
 bindkey " " magic-space
+
+# Backspace is borked in command line editing without this
+# https://unix.stackexchange.com/questions/290392/backspace-in-zsh-stuck
+bindkey -v '^?' backward-delete-char
+
 #bindkey '^[^[[D' backward-word
 #bindkey '^[^[[C' forward-word
 #bindkey '^[[5D' beginning-of-line
 #bindkey '^[[5C' end-of-line
 #bindkey '^[[3~' delete-char
-#bindkey '^?' backward-delete-char
