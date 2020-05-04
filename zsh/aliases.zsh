@@ -24,6 +24,7 @@ alias mw='./mvnw'
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias reload!='. ~/.zshrc'
 alias s='source $HOME/.bash_profile'
+alias tf='terraform'
 alias toxi='toxiproxy-cli'
 
 alias u='cd ..'
