@@ -17,6 +17,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 filetype plugin indent on  " required
