@@ -1,0 +1,7 @@
+awscli
+bash
+coreutils
+jq
+node
+pyenv
+zsh
