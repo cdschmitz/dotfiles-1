@@ -16,13 +16,18 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'lepture/vim-jinja'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
+Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 filetype plugin indent on  " required
 
-color desert
+set t_Co=256
+colo solarized8
+" colo gruvbox
+" color desert
+
 filetype indent on
 syntax on
 set backupcopy=yes
