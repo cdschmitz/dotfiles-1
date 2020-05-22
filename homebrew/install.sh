@@ -1,11 +1,32 @@
 #!/bin/sh
-#
-# Homebrew
-#
-# This installs some of the common dependencies needed (or at least desired)
-# using Homebrew.
 
-# Check for Homebrew
+taps=(
+    homebrew/cask
+    homebrew/core
+    shopify/shopify
+    versent/taps
+)
+
+formulas=(
+    aws-iam-authenticator
+    awscli
+    bash
+    coreutils
+    jq
+    hyperkit
+    kubectl
+    kubectx
+    node
+    openssl
+    pyenv
+    readline
+    ripgrep
+    saml2aws
+    tfenv
+    toxiproxy
+    zsh
+)
+
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
@@ -19,6 +40,12 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   fi
 
+  # Tap into additional repos as sources for formulas
+  for tap in $taps; do
+      brew tap $tap
+  done
 fi
+
+brew install "${formulas[@]}"
 
 exit 0
