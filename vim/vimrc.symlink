@@ -46,6 +46,7 @@ set t_vb=
 set visualbell
 set incsearch
 set nohlsearch
+set relativenumber
 
 " autocmd QuickFixCmdPost [^l]* nested cwindow
 
