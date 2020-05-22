@@ -1,7 +1,10 @@
 awscli
 bash
 coreutils
+jenv
 jq
 node
 pyenv
+ripgrep
+tfenv
 zsh
