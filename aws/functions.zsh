@@ -12,6 +12,17 @@ function aws_ec2_instance_private_ip_by_tag_name() {
             --output text
 }
 
+function aws_ec2_view_user_data() {
+    local instance_id="$1"
+    [[ -n "$instance_id" ]] && \
+        aws ec2 describe-instance-attribute \
+            --instance-id "$instance_id" \
+            --attribute userData \
+            --output text \
+            --query 'UserData.Value' \
+            | base64 --decode
+}
+
 function aws_rds_download_error_logs() {
     db=$1
     AWS_PAGER=
