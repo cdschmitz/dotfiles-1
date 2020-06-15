@@ -12,6 +12,7 @@ formulas=(
     awscli
     bash
     coreutils
+    fzf
     jq
     hyperkit
     kubectl
