@@ -1,3 +1,14 @@
+#!/usr/bin/env zsh
+
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
+export FZF_DEFAULT_OPTS="--cycle --exact --multi"
+
+alias ff="fzf"
+
+function fh() {
+    eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
