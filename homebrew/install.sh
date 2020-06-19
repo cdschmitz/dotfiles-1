@@ -12,6 +12,7 @@ formulas=(
     awscli
     bash
     coreutils
+    fd
     fzf
     jq
     hyperkit

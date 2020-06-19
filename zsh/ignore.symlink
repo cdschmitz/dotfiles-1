@@ -1,2 +1,16 @@
 # For ripgrep
+.cache
+.eclipse
 .git
+.gradle
+.grails
+.jenkins
+.kube/http-cache
+.local
+.m2
+.npm
+.pyenv
+
+Library
+
+*rgignore
