@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elzr/vim-json'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'google/vim-jsonnet'
 Plugin 'groenewege/vim-less'
 Plugin 'jpalardy/vim-slime'
 Plugin 'jiangmiao/auto-pairs'
