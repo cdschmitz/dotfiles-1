@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 taps=(
     homebrew/cask
     homebrew/core
     shopify/shopify
-    versent/taps
+    versent/homebrew-taps
 )
 
 formulas=(
@@ -42,12 +42,13 @@ then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
   fi
 
-  # Tap into additional repos as sources for formulas
-  for tap in $taps; do
-      brew tap $tap
-  done
 fi
 
-brew install "${formulas[@]}"
+# Tap into additional repos as sources for formulas
+for tap in "${taps[@]}"; do
+    echo "Homebrew tap: $tap"
+    brew tap $tap
+done
 
+brew install "${formulas[@]}"
 exit 0
