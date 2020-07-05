@@ -53,3 +53,12 @@ brew update
 # Install software
 echo "› $DOTFILES/script/install"
 $DOTFILES/script/install
+
+# Set default shell
+if [[ -n "$DEFAULT_SHELL" ]]; then
+    echo "Setting default shell: $DEFAULT_SHELL"
+    if ! grep "$DEFAULT_SHELL" /etc/shells &> /dev/null; then
+        sudo bash -c "echo '$DEFAULT_SHELL' >> /etc/shells"
+    fi
+    chsh -s $DEFAULT_SHELL
+fi
