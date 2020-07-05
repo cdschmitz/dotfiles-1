@@ -44,6 +44,10 @@ then
 
 fi
 
+# Update homebrew
+echo "› brew update"
+brew update
+
 # Tap into additional repos as sources for formulas
 for tap in "${taps[@]}"; do
     echo "Homebrew tap: $tap"
