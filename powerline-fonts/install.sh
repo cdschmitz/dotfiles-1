@@ -8,3 +8,8 @@ if ! [[ -d "$target_dir" ]]; then
     cd "$target_dir"
     ./install.sh
 fi
+
+mac_fonts_dir="$HOME/Library/Fonts"
+if [[ -d "$mac_fonts_dir" ]]; then
+    cp fonts/* "$mac_fonts_dir"
+fi
