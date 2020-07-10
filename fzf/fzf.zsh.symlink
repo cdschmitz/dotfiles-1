@@ -3,12 +3,23 @@
 # $(brew --prefix)/opt/fzf/install
 
 export FZF_DEFAULT_COMMAND="fd --type file"
-export FZF_DEFAULT_OPTS="--bind ctrl-f:page-down,ctrl-b:page-up --cycle --exact --height 80% --multi"
+export FZF_DEFAULT_OPTS="--bind alt-space:cancel,ctrl-f:page-down,ctrl-b:page-up --cycle --exact --height 80% --multi"
 export FZF_COMPLETION_OPTS="$FZF_DEFAULT_OPTS --ansi --preview 'head -n 100 {}' --preview-window=up"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --color=always"
 export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
 
 alias ff="fzf"
+
+function vf() {
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+function vfh() (
+  cd $HOME
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+)
 
 _fzf_compgen_path() {
   fd --type f --color=always --hidden . "$1"

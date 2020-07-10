@@ -69,6 +69,10 @@ function remove_backslashes() {
     [[ -f "$1" ]] && sed 's/\\//g' < "$1"
 }
 
+function rgh() {
+    rg "$@" $HOME
+}
+
 # Save a backup of whatever file is passed to this function.
 # Directories are copied recursively.
 function save() {
