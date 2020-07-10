@@ -8,6 +8,7 @@ alias .z='$EDITOR $HOME/.zshrc'
 
 alias cddl='cd $HOME/Downloads'
 alias cddt='cd $HOME/Desktop'
+alias cdot='cd $HOME/dotfiles'
 alias cddot='cd $HOME/dotfiles'
 alias cdvim='cd $HOME/.vim'
 
