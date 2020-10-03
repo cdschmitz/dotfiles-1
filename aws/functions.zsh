@@ -23,11 +23,12 @@ function aws_ec2_view_user_data() {
             | base64 --decode
 }
 
-function aws_rds_download_error_logs() {
+function aws_rds_download_logs() {
     db=$1
+    pattern=$2
     AWS_PAGER=
 
-    for file in $(aws rds describe-db-log-files --db-instance-identifier "$db" --filename-contains error --query 'DescribeDBLogFiles[*].LogFileName' --output text); do
+    for file in $(aws rds describe-db-log-files --db-instance-identifier "$db" --filename-contains "$pattern" --query 'DescribeDBLogFiles[*].LogFileName' --output text | sed $'s/\t/\\\n/g'); do
         echo "Downloading: $file"
 
         local_filename="$(basename $file)"
@@ -38,6 +39,16 @@ function aws_rds_download_error_logs() {
             --output text \
             > "$local_filename"
     done
+}
+
+function aws_rds_download_error_logs() {
+    db=$1
+    aws_rds_download_logs "$db" error
+}
+
+function aws_rds_download_slow_logs() {
+    db=$1
+    aws_rds_download_logs "$db" slow
 }
 
 function aws_route53_get_hosted_zone_id() {

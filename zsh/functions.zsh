@@ -3,7 +3,7 @@ function b64_to_p12() {
 }
 
 function dfg() {
-   grep -ri "$@" "$HOME/dotfiles" --exclude-dir=.git
+    rg "$@" "$HOME/dotfiles"
 }
 
 function extract() {
