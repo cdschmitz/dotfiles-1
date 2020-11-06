@@ -23,6 +23,11 @@ function aws_ec2_view_user_data() {
             | base64 --decode
 }
 
+function aws_lambda_download_fn() {
+    local name="$1"
+    local location="$(aws lambda get-function --function-name $name --query 'Code.Location' --output text)"
+}
+
 function aws_rds_download_logs() {
     db=$1
     pattern=$2
