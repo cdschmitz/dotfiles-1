@@ -18,6 +18,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'towolf/vim-helm'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'VundleVim/Vundle.vim'
@@ -103,6 +104,9 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_mode_map = {
     \ "mode": "passive"}
 
+
+" Helm
+autocmd BufRead,BufNewFile *.gotmpl set ft=helm
 
 autocmd FileType xml,yaml setlocal ts=2 sts=2 sw=2 expandtab
 
