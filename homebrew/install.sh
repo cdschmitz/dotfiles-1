@@ -22,6 +22,7 @@ formulas=(
     openssl
     pyenv
     readline
+    redis
     ripgrep
     saml2aws
     tfenv
