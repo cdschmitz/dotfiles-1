@@ -24,6 +24,7 @@ formulas=(
     readline
     redis
     ripgrep
+    rlwrap
     saml2aws
     tfenv
     toxiproxy
