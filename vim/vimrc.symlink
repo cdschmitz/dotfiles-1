@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'google/vim-jsonnet'
 Plugin 'groenewege/vim-less'
@@ -105,8 +106,10 @@ let g:syntastic_mode_map = {
     \ "mode": "passive"}
 
 
-" Helm
-autocmd BufRead,BufNewFile *.gotmpl set ft=helm
+" Go template
+" autocmd BufRead,BufNewFile *.gotmpl set ft=gotexttmpl
+" autocmd BufRead,BufNewFile *.gotmpl set ft=helm
+autocmd BufRead,BufNewFile *.gotmpl set ft=yaml
 
 autocmd FileType xml,yaml setlocal ts=2 sts=2 sw=2 expandtab
 
