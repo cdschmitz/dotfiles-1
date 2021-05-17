@@ -13,6 +13,7 @@ alias cdot='cd $HOME/dotfiles'
 alias cddot='cd $HOME/dotfiles'
 alias cdvim='cd $HOME/.vim'
 
+alias b64e='python -c "import base64;import sys;s=sys.argv[1];print(base64.b64encode(s.encode(\"ascii\")))"'
 alias envs='env | sort'
 alias g='git'
 alias grep='grep --color'
